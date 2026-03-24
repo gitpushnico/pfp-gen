@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pfp-gen</title>
+  <meta name="description" content="Generative profile picture generator built with p5.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    #header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    #header h1 {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    canvas {
+      max-width: min(90vw, 90vh);
+      max-height: min(90vw, 90vh);
+      cursor: pointer;
+      display: block;
+    }
+
+    #controls {
+      display: flex;
+      gap: 20px;
+      margin-top: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #controls span {
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+    }
+
+    #seed-display {
+      font-size: 11px;
+      color: rgba(255,255,255,0.25);
+      margin-top: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    #credit {
+      position: fixed;
+      bottom: 14px;
+      right: 18px;
+      font-size: 10px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.5px;
+    }
+
+    #credit a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+
+    #credit a:hover {
+      color: rgba(255,255,255,0.6);
+    }
+  </style>
+</head>
+<body>
+  <main></main>
+
+  <div id="controls">
+    <span>click / space → new</span>
+    <span>s → save png</span>
+  </div>
+  <div id="seed-display">seed: —</div>
+
+  <div id="credit">
+    <table style="border-collapse: collapse; font-size: inherit; color: inherit;">
+      <tr>
+        <td style="padding-right: 4px;">Inspired</td>
+        <td style="padding-right: 4px;">by</td>
+        <td><a href="https://teh.kim/" target="_blank" rel="noopener">Kim Asendorf</a></td>
+      </tr>
+      <tr>
+        <td style="padding-right: 4px;">Created</td>
+        <td style="padding-right: 4px;">by</td>
+        <td><a href="https://github.com/gitpushnico" target="_blank" rel="noopener">gitpushnico</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
