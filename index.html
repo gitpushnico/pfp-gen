@@ -26,6 +26,7 @@
       max-height: min(90vw, 90vh);
       cursor: pointer;
       display: block;
+      touch-action: manipulation;
     }
 
     #controls {
@@ -102,7 +103,7 @@
     <span class="desktop-only">space → new</span>
     <span class="desktop-only">s → save png</span>
   </div>
-  <button id="save-btn" onclick="saveCanvas('pfp_' + (typeof seed !== 'undefined' ? seed : '0'), 'png')">save png</button>
+  <button id="save-btn" onclick="event.stopPropagation(); saveCanvas('pfp_' + (typeof seed !== 'undefined' ? seed : '0'), 'png')">save png</button>
   <div id="seed-display">seed: —</div>
 
   <div id="credit">

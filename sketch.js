@@ -468,7 +468,13 @@ function applyScanlineNoise() {
 // ═══════════════════════════════════════════════════════════════
 // INTERAKTION
 // ═══════════════════════════════════════════════════════════════
-function mousePressed() { redraw(); }
+function mousePressed() {
+  // Only trigger on canvas, not on buttons
+  if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
+    redraw();
+    return false; // Prevents default browser behavior (scroll)
+  }
+}
 
 function keyPressed() {
   if (key === 's' || key === 'S') saveCanvas(`pfp_${pal.name}_${seed}`, 'png');
